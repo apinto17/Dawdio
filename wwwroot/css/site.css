@@ -18,7 +18,8 @@ a {
   border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -43,12 +44,27 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+}
+
+/* Master */
+.master-container {
+  background-color: #4f025c;
+  height: 500px;
+  width: 1200px;
+}
+
+.channel-container {
+  background-color: #a569af;
+  height: 60px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
 }
 
 /* Sticky footer styles
