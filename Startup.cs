@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ElectronNET.API;  
+using ElectronNET.API.Entities;  
+using System.Runtime.InteropServices; 
 
 namespace daw
 {
@@ -51,6 +54,19 @@ namespace daw
             {
                 endpoints.MapRazorPages();
             });
+
+            if (HybridSupport.IsElectronActive)  
+            {  
+                CreateWindow();  
+            }  
+        }
+
+        private async void CreateWindow()  
+        {  
+            var window = await Electron.WindowManager.CreateWindowAsync();  
+            window.OnClosed += () => {  
+                Electron.App.Quit();  
+            };  
         }
     }
 }
